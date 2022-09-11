@@ -1,0 +1,39 @@
+.headerContent{
+    display: flex;
+    justify-content: end;
+    color: blue;
+    padding-top: 2rem;
+    font-size: larger;
+    padding-right: 4rem;
+    height: 60px;
+
+    /* background-color: rgb(147, 179, 207); */
+    background-color: #401ba3;
+  
+  }
+  /* #42b72a; */
+  .navEdit{
+    margin: 15px;
+    width: 90%;
+    align-self: center;
+    height: 40px;
+    border-radius: 10px;
+    border: none;
+    background-color: #1392a8;
+    color: white;
+    font-size: 15px;
+    font-weight: 500;
+    cursor: pointer;
+  }
+  .navHms{
+      margin-right: 605px;
+      border-radius: 15px;
+      align-self: center;
+      background-color: #a938cc;
+      border: none;
+      height: 45px;
+      align-self: center;
+      color: white;
+      /* width: 150px; */
+      
+  }
