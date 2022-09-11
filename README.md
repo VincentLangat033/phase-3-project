@@ -1,70 +1,71 @@
-# Getting Started with Create React App
+# House Management System
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+By Vincent Kimutai  28/07/2022
 
-## Available Scripts
 
-In the project directory, you can run:
+<h1> Description</h1>
 
-### `npm start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+<h1> Setup/Installation Requirements </h1>
+<ol>
+<li>Clone the project using git -clone https://github.com/VincentLangat033/hmsproject.git  If you are not able to clone it, you can download the files as a zip folder</li>
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+ <li> Ensure that you have access to the complete file</li>
+ <li> Navigate to the index.html file which is in the root file of the folder. The application is static and only uses HTML and CSS </li>
+ <li> Copy the path of the index.html file to your browser and you will be able to access the application. </li>
+</ol>
+<h1> Technologies Used</h1>
+HTML,CSS and React
+<h1> Contact Details</h1>
+Incase of any issues or questions, you can get in touch with me via email at kimutailangat033@gmail.com, also via phone on +254723753014. Also feel free to contribute to my project.
+<h2> Access to the Rest API</h2>
+<h3>
+  My Json Server has been hosted on Heroku and you can make POST GET PATCH DELETE methods to the Api.
+  To Check the db.json file click the following click:
+  https://hmsphase2project.netlify.app/
+</h3>
+This website has been hosted remotely on Netlify. The Link to the hosted page is : https://hmsdemonetlify.netlify.app/
+If you need help hosting your website on Netlify Access the below documentation for guidance.
 
-### `npm test`
+Step 1: Install or create
+Open your terminal and enter the following:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+npm install -g create-react-app
+create-react-app hello-world
+cd hello-world
+npm run build
 
-### `npm run build`
+npm install netlify-cli -g
+netlify deploy
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Or deploy a create-react-app site with Netlify Functions support with just 1 click:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Deploy to Netlify
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Step 2: Choose a new project
+If you are using the netlify CLI, 
+follow command line prompts and choose yes for new project and ./build as your deploy folder and voila you have a production React app!
+You can also link to a GitHub repo for continuous deployment for specified branches and will grant you our nifty Deploy Preview feature.
 
-### `npm run eject`
+Happy Hacking :)
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+Step 3: Redirect and rewrite rules
+If you choose to use something for routing (like React Router for example), you will need to set up a redirect and rewrite rule for the single page app.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+That redirect rule would look like this:
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+/*    /index.html   200
+This redirect rule above will serve the index.html instead of giving a 404 no matter what URL the browser requests.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+You can add redirect rules to the _redirects file or to your netlify.toml config file. For more information on redirects on Netlify checkout the docs.
 
-## Learn More
+Go forth and React!
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## Project Layout
 
-### Code Splitting
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+## License
+MIT
 
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Copyright (c) 2022 Vincent Kimutai Langat.
