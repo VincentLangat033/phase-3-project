@@ -1,0 +1,12 @@
+.mainContent{
+    display: flex;
+    /* width: 100%; */
+    /* width: 80%; */
+
+}
+.sideNavBar{
+    width: 20%;
+}
+.midContentBody{
+   width: 80%;
+}
