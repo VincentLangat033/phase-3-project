@@ -97,28 +97,8 @@ function HouseForm() {
                 onChange={handleChange}
               />
             </label>
-            {/* <label>
-              Answer 4:
-              <input
-                type="text"
-                name="answer4"
-                value={formData.answer4}
-                onChange={handleChange}
-              />
-            </label> */}
-            {/* <label>
-              Correct Answer:
-              <select
-                name="correctIndex"
-                value={formData.correctIndex}
-                onChange={handleChange}
-              >
-                <option value="0">{formData.answer1}</option>
-                <option value="1">{formData.answer2}</option>
-                <option value="2">{formData.answer3}</option>
-                <option value="3">{formData.answer4}</option>
-              </select>
-            </label> */}
+         
+            
             <button type="submit" className="loginRegisterButton">Add House</button>
             </div>
             </div>
