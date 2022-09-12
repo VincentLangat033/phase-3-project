@@ -7,8 +7,7 @@ function HouseForm() {
         image1: "",
         image2: "",
         image3: "",
-        // answer3: "",
-        // correctIndex: 0,
+        
       });
     
       function handleChange(event) {
@@ -31,13 +30,9 @@ function HouseForm() {
             first_image:formData.first_image,
             third_image:formData.third_image,
             fourth_image:formData.fourth_image,
-            // answers: [
-            //   formData.answer1,
-            //   formData.answer2,
-            //   formData.answer3,
-            //   formData.answer4,
-            // ],
-            // correctIndex: parseInt(formData.correctIndex),
+            rent:formData.rent,
+            description:formData.description,
+            
           }),
         });
       }
@@ -81,6 +76,24 @@ function HouseForm() {
                 type="text"
                 name="third_image"
                 value={formData.third_image}
+                onChange={handleChange}
+              />
+            </label>
+            <label>
+             <span className='spanText'>Hse Description:</span>
+              <input className="loginInput"
+                type="text"
+                name="description"
+                value={formData.description}
+                onChange={handleChange}
+              />
+            </label>
+            <label>
+             <span className='spanText'>Rent Amount:</span>
+              <input className="loginInput"
+                type="text"
+                name="rent"
+                value={formData.rent}
                 onChange={handleChange}
               />
             </label>

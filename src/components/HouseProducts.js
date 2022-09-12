@@ -60,7 +60,7 @@ function HouseProducts() {
                         <div className='column2' >
                         <img src= {house.first_image} alt="Image house" className='imageProducts'></img>
                             <h3 className='imagehouse'> {house.name}</h3>
-                            <h3 className='imagehouse'>Rent: {house.amount}</h3>
+                            <h3 className='imagehouse'>Rent: {house.rent}</h3>
                             {/* <button className='imageButton imageButton3'>Explore</button> */}
                             {/* <HousePostDetails 
                             index={house.id}
