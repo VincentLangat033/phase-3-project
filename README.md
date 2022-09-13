@@ -23,6 +23,8 @@ Incase of any issues or questions, you can get in touch with me via email at kim
 Here is a Github Account to check my Back end server <br> 
 Clone this repository to Access the back-end https://github.com/VincentLangat033/phase-3-back-end
 
+<h2> How to Deploy</h2>
+
 
 
 Step 1: Install or create
