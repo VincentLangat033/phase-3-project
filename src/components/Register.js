@@ -28,15 +28,34 @@ function handlesubmit(e){
     setLogged(true)
   }
   return (
-    <form  onSubmit={handlesubmit}>
-      <label>Enter your name </label>
-      <input type="text" onChange={(e)=>{setname(e.target.value)}} required/>
-      <label>Enter your email</label>
-      <input type="email" onChange={(e)=>{setemail(e.target.value)}} required/>
-      <label>Enter your password </label>
-      <input type="text" onChange={(e)=>{setpassword(e.target.value)}} required/>
-      <input type="submit" value="submit"/>
+    <div className='login'>
+     <div className='loginWrapper'>
+        <div className='loginLeft'>
+        <h3 className='loginLogo'>Pool_House</h3>
+          <span className='loginDesc'> Register to begin</span>
+
+        </div>
+               <div className='loginRight'>
+                         <div className='loginBox'>
+                         <form  onSubmit={handlesubmit}>
+     
+      Name: <input className="loginInput" placeholder="Enter your name" type="text" onChange={(e)=>{setname(e.target.value)}} required/> <br></br>
+   
+      Email: <input  className="loginInput" placeholder="Enter your email" type="email" onChange={(e)=>{setemail(e.target.value)}} required/> <br></br>
+    
+      Password: <input className="loginInput" placeholder="Enter your password"  type="text" onChange={(e)=>{setpassword(e.target.value)}} required/> <br></br>
+      <input className="loginRegisterButton" type="submit" value="Submit"/>
+      <button className="loginRegisterButton1"  >Have an Account? Login</button>
     </form>
+
+
+    </div>
+        </div>
+      
+
+     </div>
+
+   </div>
   );
 }
 export default Register
@@ -46,42 +65,3 @@ export default Register
 
 
 
-
-// import React from 'react'
-// import "./css/header.css"
-// import "./css/register.css"
-
-// function Register() {
-//   return (
-//     <div className='login'>
-//      <div className='loginWrapper'>
-//        <div className='loginLeft'>
-//          <h3 className='loginLogo'> HMS</h3>
-//          <span className='loginDesc'> Log in to begin</span>
-
-//        </div>
-//        <div className='loginRight'>
-//          <div className='loginBox'>
-//          <form action="/signup" method="post">
-//            <input placeholder="Name" className="loginInput" name= "name" /> 
-//            <input placeholder="Username" className="loginInput"  />
-//            <input placeholder="Email" className="loginInput" />
-//            <input placeholder="Password" className="loginInput" />
-//            <button className="loginButtton">Sign Up</button>
-           
-//            <button className="loginRegisterButton">Log into Account</button>
-//            </form>
-         
-         
-//          </div>
-
-//        </div>
-      
-
-//      </div>
-
-//     </div>
-//   )
-// }
-
-// export default Register;
