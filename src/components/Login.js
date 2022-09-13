@@ -7,38 +7,7 @@ import "./css/login.css"
 function Login({ setuseremail, setuserpassword, handlesubmit,setLogged  }) {
 const[signup,setsignup]=useState(false)
   return (
-    // signup?<Register setLogged={setLogged}/>:
-    // <>
-    //   <form onSubmit={handlesubmit}>
-    //     <h1>Please Log In</h1>
-        
-    //     <input 
-    //       onChange={(e) => {
-    //         setuseremail(e.target.value);
-    //       }}
-    //       className="loginInput"
-    //       type="email"
-    //       name="email"
-    //       id="email"
-    //       placeholder="Email"
-    //       required
-    //     />
-    //     <input
-    //       onChange={(e) => {
-    //         setuserpassword(e.target.value);
-    //       }}
-    //       className="loginInput"
-    //       type="password"
-    //       name="password"
-    //       id="password"
-    //       placeholder="Password"
-    //       required
-    //     />
-    //     <button>Login</button>
-    //   </form>
-    //   <button className="reg" onClick={()=>{setsignup(true)}}>Register</button>
-  
-    // </>
+ 
     signup?<Register setLogged={setLogged}/>:
 
     <div className='login'>
