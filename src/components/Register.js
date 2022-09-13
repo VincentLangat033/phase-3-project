@@ -14,7 +14,7 @@ function Register({ setLogged }) {
       headers: { "content-Type": "application/json" },
       body: JSON.stringify({
         name: name,
-        user_name: user_name,
+        // user_name: user_name,
         email: email,
         password_digest: password,
       }),
