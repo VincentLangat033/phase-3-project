@@ -4,6 +4,8 @@ import "./css/header.css"
 import "./css/register.css"
 function Register({setLogged}) {
     const[name,setname]=useState("")
+    const[user_name,setusername]=useState("")
+
 const[email,setemail]=useState("")
 const[password,setpassword]=useState("")
 function handlesubmit(e){
@@ -14,6 +16,7 @@ function handlesubmit(e){
       headers:{"content-Type":"application/json"},
       body:JSON.stringify({
         name:name,
+        user_name:user_name,
         email:email,
         password_digest:password
         
@@ -40,6 +43,7 @@ function handlesubmit(e){
                          <form  onSubmit={handlesubmit}>
      
       Name: <input className="loginInput" placeholder="Enter your name" type="text" onChange={(e)=>{setname(e.target.value)}} required/> <br></br>
+      Username: <input className="loginInput" placeholder="Enter user name" type="text" onChange={(e)=>{setusername(e.target.value)}} required/> <br></br>
    
       Email: <input  className="loginInput" placeholder="Enter your email" type="email" onChange={(e)=>{setemail(e.target.value)}} required/> <br></br>
     
