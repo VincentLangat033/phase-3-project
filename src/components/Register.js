@@ -1,147 +1,190 @@
 // import "./signup.css";
-import { useState } from "react";
-import { NavLink } from "react-router-dom";
-import {
-  ref,
-  uploadBytes,
-} from "firebase/storage";
-import { storage } from "../firebase"
+import React,{useState} from "react";
+import "./css/header.css"
+import "./css/register.css"
+function Register({setLogged}) {
+    const[name,setname]=useState("")
+const[email,setemail]=useState("")
+const[password,setpassword]=useState("")
+function handlesubmit(e){
+    e.preventDefault()
+    fetch("http://localhost:9292/users",
+    {
+      method:"POST",
+      headers:{"content-Type":"application/json"},
+      body:JSON.stringify({
+        name:name,
+        email:email,
+        password_digest:password
+        
+      })
+
+    }
+    )
+    setname("")
+    setemail("")
+    setpassword("")
+    e.target.reset("")
+    setLogged(true)
+  }
+  return (
+    <form  onSubmit={handlesubmit}>
+      <label>Enter your name </label>
+      <input type="text" onChange={(e)=>{setname(e.target.value)}} required/>
+      <label>Enter your email</label>
+      <input type="email" onChange={(e)=>{setemail(e.target.value)}} required/>
+      <label>Enter your password </label>
+      <input type="text" onChange={(e)=>{setpassword(e.target.value)}} required/>
+      <input type="submit" value="submit"/>
+    </form>
+  );
+}
+export default Register
+
+
+// import { useState } from "react";
+// import { NavLink } from "react-router-dom";
+// import {
+//   ref,
+//   uploadBytes,
+// } from "firebase/storage";
+// import { storage } from "../firebase"
 
 
 
-function SignUp({setUserLogin}) {
-  const [userdata, setUserData] = useState({
-    username: "",
-    email: "",
-    password: "",
-    phone: "",
-  });
+// function SignUp({setUserLogin}) {
+//   const [userdata, setUserData] = useState({
+//     username: "",
+//     email: "",
+//     password: "",
+//     phone: "",
+//   });
 
 
-  function handleSubmit(e) {
-    e.preventDefault();
+//   function handleSubmit(e) {
+//     e.preventDefault();
 
   
     
-      fetch("https://emkayint23.herokuapp.com/users", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          Accept: "application/json",
-        },
-        body: JSON.stringify(userdata),
-      })
-        .then((res) => res.json())
-        .then((res) => {
-          console.log(res);
-          if (res.response === "User Exist") {
-            alert("User Exists Do you want to login?");
-          } else {
-            // uploadImg();
-            setUserData({
-              username: "",
-              email: "",
-              password: "",
-              phone: "",
-              image: "",
-            });
-            setUserLogin(res);
+//       fetch("https://emkayint23.herokuapp.com/users", {
+//         method: "POST",
+//         headers: {
+//           "Content-Type": "application/json",
+//           Accept: "application/json",
+//         },
+//         body: JSON.stringify(userdata),
+//       })
+//         .then((res) => res.json())
+//         .then((res) => {
+//           console.log(res);
+//           if (res.response === "User Exist") {
+//             alert("User Exists Do you want to login?");
+//           } else {
+//             // uploadImg();
+//             setUserData({
+//               username: "",
+//               email: "",
+//               password: "",
+//               phone: "",
+//               image: "",
+//             });
+//             setUserLogin(res);
             
-          }
-        });
+//           }
+//         });
     
-  }
+//   }
 
-  return (
-    <div className="container-main  signup">
-      <form className="signup-card " onSubmit={handleSubmit}>
-        <div className="row">
+//   return (
+//     <div className="container-main  signup">
+//       <form className="signup-card " onSubmit={handleSubmit}>
+//         <div className="row">
         
 
-          <div className="col-sm-6">
-            <h4>SignUp</h4>
-            {/* <span className="span1">Made for developers by developers</span> */}
-            <input
-              name="email"
-              required
-              type="email"
-              value={userdata.email}
-              className="inputEmail"
-              placeholder="Email"
-              onChange={(e) =>
-                setUserData({
-                  ...userdata,
-                  email: e.target.value,
-                })
-              }
-            />
-            <br />
-            <br />
-            <input
-              type="text"
-              className="username"
-              placeholder="user name"
-              required
-              value={userdata.username}
-              onChange={(e) =>
-                setUserData({
-                  ...userdata,
-                  username: e.target.value,
-                })
-              }
-            />
-            <br />
-            <br />
-            <input
-              type="number"
-              className="username"
-              placeholder="phone number"
-              required
-              value={userdata.phone}
-              onChange={(e) =>
-                setUserData({
-                  ...userdata,
-                  phone: e.target.value,
-                })
-              }
-            />
+//           <div className="col-sm-6">
+//             <h4>SignUp</h4>
+//             {/* <span className="span1">Made for developers by developers</span> */}
+//             <input
+//               name="email"
+//               required
+//               type="email"
+//               value={userdata.email}
+//               className="inputEmail"
+//               placeholder="Email"
+//               onChange={(e) =>
+//                 setUserData({
+//                   ...userdata,
+//                   email: e.target.value,
+//                 })
+//               }
+//             />
+//             <br />
+//             <br />
+//             <input
+//               type="text"
+//               className="username"
+//               placeholder="user name"
+//               required
+//               value={userdata.username}
+//               onChange={(e) =>
+//                 setUserData({
+//                   ...userdata,
+//                   username: e.target.value,
+//                 })
+//               }
+//             />
+//             <br />
+//             <br />
+//             <input
+//               type="number"
+//               className="username"
+//               placeholder="phone number"
+//               required
+//               value={userdata.phone}
+//               onChange={(e) =>
+//                 setUserData({
+//                   ...userdata,
+//                   phone: e.target.value,
+//                 })
+//               }
+//             />
 
-            <br />
-            <br />
-            <input
-              className="password"
-              type="password"
-              name="password"
-              required
-              placeholder="password"
-              value={userdata.password}
-              onChange={(e) =>
-                setUserData({
-                  ...userdata,
-                  password: e.target.value,
-                })
-              }
-            />
-            <br />
-            <br />
-            <input type="checkbox" className="check" />
-            <span> Agree To Terms And Policies?</span>
-            <br />
-            <br />
-            <input type="submit" value="SignUp" className="submit" />
-            <div className="text-center">
-              <p>
-                Already have an account? <NavLink to="/login">SignIn</NavLink>
-              </p>
-            </div>
-          </div>
-        </div>
-      </form>
-    </div>
-  );
-}
+//             <br />
+//             <br />
+//             <input
+//               className="password"
+//               type="password"
+//               name="password"
+//               required
+//               placeholder="password"
+//               value={userdata.password}
+//               onChange={(e) =>
+//                 setUserData({
+//                   ...userdata,
+//                   password: e.target.value,
+//                 })
+//               }
+//             />
+//             <br />
+//             <br />
+//             <input type="checkbox" className="check" />
+//             <span> Agree To Terms And Policies?</span>
+//             <br />
+//             <br />
+//             <input type="submit" value="SignUp" className="submit" />
+//             <div className="text-center">
+//               <p>
+//                 Already have an account? <NavLink to="/login">SignIn</NavLink>
+//               </p>
+//             </div>
+//           </div>
+//         </div>
+//       </form>
+//     </div>
+//   );
+// }
 
-export default SignUp
+// export default SignUp
 
 
 

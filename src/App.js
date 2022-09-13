@@ -8,11 +8,48 @@ import HouseProducts from "./components/HouseProducts";
 import HouseForm from "./components/HouseForm";
 import HseUpdate from "./components/HseUpdate";
 import About from "./components/About";
+import { useEffect, useState } from "react";
 
 function App() {
+
+  const [logged,setLogged]= useState(false)
+  const [useremail,setuseremail]=useState("")
+  const [userpassword,setuserpassword]=useState("")
+  const [users,setusers]=useState([])
+  const [ success,setsuccess]=useState(true)
+ 
+  useEffect(()=>{
+   fetch("http://localhost:9292/users")
+   .then(res=>res.json())
+   .then(data=>setusers(data))
+ },[])
+ 
+  function handlesubmit(e){
+  e.preventDefault()
+ 
+  users.filter((user)=>{
+   if(user.email ===useremail && user.password_digest===userpassword){
+     setLogged(true)
+     setuseremail("")
+     setuserpassword("")
+   } else{
+    setuseremail("")
+    setuserpassword("")
+    setsuccess(false)
+    e.target.reset()
+   }
+  return true
+   
+   
+  })
+  }
+ 
+  
   return (
+    logged ?
     <div>
       <NavBar />
+     
       <div className='mainContent1'>
 
        <div className='sideNavBar1'>
@@ -33,8 +70,8 @@ function App() {
 
         </div>
 
-      </div>
-      </div>
+      </div> 
+      </div> : <Login setuseremail={setuseremail} setuserpassword={setuserpassword} handlesubmit={handlesubmit} setLogged={setLogged}/>
 
 
   );
