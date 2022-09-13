@@ -44,8 +44,9 @@ const[signup,setsignup]=useState(false)
           placeholder="Password"
           required
         /> <br></br>
-        <button className="loginButtton" >Login</button>
+        <button className="loginRegisterButton" >Login</button>
       </form>
+      <h6>Don't have an Account?</h6>
       <button className="loginButtton" onClick={()=>{setsignup(true)}}>Register</button>
   
     </>
